@@ -26,7 +26,7 @@ git reset --hard <commit_id>//还原到指定的版本 同事清楚了暂缓区�
 git log						//查看提交历史 以便要回滚到那个版本
 git reflog					//查看命令历史 以便确定要回到未来的哪个版本
 git checkout -- <file>		//撤销工作区的修改消息
-git rm <file>				//删除文件
+rm <file>					//删除文件
 git remote add origin git@server-name:path/repo-name.git	//关联一个远程库 可以直接替换成github网站上面的地址
 git push -u origin master 	//第一次推送master分支的所有内容
 git push origin master 		//推送最新修改
