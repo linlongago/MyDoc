@@ -1,0 +1,64 @@
+长连接和短链接
+长连接：一直维持着链接
+短链接：请求关闭
+
+推拉模式
+推模式：服务器把消息发给客户端
+拉模式：客户端向服务器端拿消息
+
+RPC 远程过程调用协议
+TCP/UDP 传输层
+HTTP 应用层
+
+gate服务器 接受客户端请求分配给connector服务器
+connector服务器 接受请求，创建与客户端的链接 维护客户端的session信息
+后端服务器 完成逻辑 提供服务给客户端
+master服务器 加载配置文件，通过读取配置文件，启动所配置的服务器集群，并对所有服务器进行管理。
+
+NGUI坐标的原点是放在中心的
+PNG基本都带阿尔法通道
+JPG带阿尔法通道
+自带阿尔法通道可以实现部分透明度
+
+电信SDK注意事项 
+1、爱游戏LOGO
+2、关于
+3、更多游戏
+4、责免说明
+
+需调用active重载方法的解决方法：
+1、自己重写一个activity
+public class SinaWeiboActivity extends Activity
+{
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        SinaWeiboInvoker.Instance.StartLogin(this);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+    	LogUtil.e("sina weibo", "onActivityResult 111111111111111111111");
+        super.onActivityResult(requestCode, resultCode, data);        
+        SinaWeiboInvoker.Instance.authorizeCallBack(requestCode, resultCode, data);
+        //finish();
+    }
+}
+2、再定义一个类 让UNITY调用方法 开启一个新的activity
+Intent intent = new Intent(MainActivity, SinaWeiboActivity.class);  
+MainActivity.startActivity(intent);
+3、用完之后要finish掉activity
+4、XML 写好配置文件android:theme="@android:style/Theme.NoTitleBar"
+
+渲染管线
+1、顶点变换：三维顶点坐标通过矩阵计算转换成二维坐标
+2、图元装配：将顶点按照顺序连起来
+3、光栅化：把图形放到像素里面去
+4、颜色填充：像素里面填充颜色
+5、各种测试：剔除遮挡
+
+master 控制
+monitor 监控
+
+判断一个点是否在三角形以内 看一个点是否与其中一个点在另外两个点的一边

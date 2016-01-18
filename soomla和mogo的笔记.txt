@@ -1,0 +1,45 @@
+IOS:
+
+soomla 支付SDK IOS 
+1、苹果账户银行信息必须填写完整，协议不能过期，如果过期了，内购价格可以设置，但是沙盒测试会获取不到itunes上的内购项，如果银行信息不完整的话，不能创建有价格的内构项
+2、具体接口查看soomla接口 接口中的内购项id必须和itunes上的一模一样
+3、沙盒测试需要将到itunes connect 的人员管理中心添加测试人员
+4、当英文内购项打回来的时候，内购项处于别拒绝状态，可以通过在描述后面加空格保存，将状态转为等待审核
+5、如果内购项当中有永久性的，则根据需求修改内购项的类型，程序要提供回复购买的接口。
+6、如果内购在后台修改了，需要将本地的游戏卸载掉，再重新安装
+
+mogo 广告SDK IOS
+1、add files to .... 将AdsMoGoRes 和 AdsMoGoSDK 加入到项目中 !!!!!!!!!将对应的SDK也添加到项目中!!!!!!
+2、buildingSettings 中的SearchPaths 要将framework search paths， header search paths, library search paths填写对应的路径 双引号一定要是英文！！！
+3、添加对应的框架 暂时不要添加PASSKIT 暂时没有解决添加之后 in-app purchase 和 game center 报错的问题 （手动添加 太尼玛蛋疼了！！！！！！！） 
+
+需要接入的framework如下：
+eventkitui
+eventkit
+coretext
+coredata
+corefoundation
+coretelephony
+social
+adsupport
+libz.1.2.5.dylib
+addressbook
+libiconv.dylib
+imageio
+mobilecoreservices
+mapkit
+libxml2
+messageui
+systemconfiguration
+
+友盟统计
+ios 
+在info plist中增加字段：
+< key>NSAppTransportSecurity< /key>
+< dict>
+    < key>NSAllowsArbitraryLoads< /key>
+< /dict>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Android:

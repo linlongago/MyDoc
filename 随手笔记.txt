@@ -1,0 +1,27 @@
+行为树
+BevNodePrecondition 外在前提
+_DoEvaluate 内在前提
+Transition 转移活动到另一个节点
+
+注意：
+接口必须简单 复杂的判断尽量都放入子功能模块里面
+
+NGUI 批次计算
+普通来算：一个图集的图片都只算一个批次，每个panel分开来算， 如果两个来自同一图集的图片中间层夹着一个另外一个图集的（层级）则算作三个批次而不是两个批次
+
+monitor.dat 检测不到手机的时候 查看adb的端口是否被占用了
+cmd > netstat -ano|findstr 5037 
+如果有被占用的话就 kill掉那个进程
+
+谷歌APK 包体过大解决方法；
+导入obb downloade相关插件，新建一个场景作为第一个场景，在第一个场景里面添加下载OBB包体的脚本
+building set 选中split application binary选项
+重命名obb文件名 main.5.com.exoa.ZombieSurvival.obb   数字5为bundle version code
+根据插件的脚本修改代码，当前插件的脚本只有下载OBB功能 没有加载场景的功能 可以根据下面网站的代码修改
+修改googlePlayDownloader当中的BASE64_PUBLIC_KEY
+具体参考https://www.exoa.fr/tutorial-unity-4-apk-splitting-google-play-obb/
+
+谷歌发布碰到的几个坑
+1、新建的内构项必须要激活才能测试和使用
+2、测试的时候要开发者在group新建一个讨论组将测试人员加进来 再将测试人员加入到beta测试alpha测试的测试人员列表当中
+3、真机测试的时候一定要绑定谷歌账号挂VPN 进入对应的谷歌市场
