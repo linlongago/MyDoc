@@ -14,11 +14,13 @@ GitHub 学习笔记(Git Shell)
 mkdir <filename> 			//创建一个文件件
 cd <filename> 				//进入文件夹
 git init					//将文件夹初始化成GIT可以管理的仓库
+
 添加文件到GIT仓库
 git add <file> 				//注意，文件名要写全，包括扩展名（不包括删除）
 git add -A 					//添加所有文件，修改，删除，添加 stages All
 git add . 		  			// stages new and modified, without deleted
 git add -u 					//stages modified and deleted, without new 
+
 git commit -m "<日志>"
 git status 					//查看当前git的状态
 git diff <file>				//对比查看文件修改内柔
@@ -41,4 +43,15 @@ git merge <name>	//合并某分支到当前分支
 git branch -d <name>	//删除分支
 git fetch	//获取远程服务器最新版本
 git pull	//同步本地数据
+git stash 	//把当前工作现场“储藏”起来，等以后恢复现场后继续工作
+git stash list //查看当前存储的工作现场列表
+git stash apply//恢复工作现场 但是stash不能删除
+git stash drop	//删除stash
+git stash pop	//上面两个功能合并
 
+git remote -v	//查看远程库信息
+本地新建的分支如果不推送到远程，对其他人就是不可见的
+git push origin branchName //从本地推送分支，如果推送失败， 先用git pull抓取远程的新提交
+git checkout -b branchName origin/branchName //在本地创建和远程分支对应的分支， 本地和远程分支的名称最好一致
+git branch --set-upstream branchName origin/branchName  //建立本地分支和远程分支的关联
+git pull 	//从远程抓取分支， 如果有冲突，先处理冲突
